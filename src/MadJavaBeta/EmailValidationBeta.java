@@ -26,10 +26,10 @@ public class EmailValidationBeta {
 
             java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
             m = p.matcher(emailAddress);
-            return "isValid : " + m.matches();
+            return "[isValid] : " + m.matches();
 
         } catch (Exception e) {
-            return "isValid : false";
+            return "[isValid] : false";
         }
     }
 
