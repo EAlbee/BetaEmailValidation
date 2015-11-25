@@ -14,41 +14,58 @@ import javax.ws.rs.Path;
 // The Java class will be hosted at the URI path "/helloworld"
 @Path("/EmailValidation")
 public class EmailValidationBeta {
+
     // The Java method will process HTTP GET requests
     @GET
     // The Java method will produce content identified by the MIME Media type "text/plain"
-    @Produces("application/json")
+    @Produces({"application/json", "text/xml"})
     @Path("/json/{emailAddress}")
-    public String isEmailValidJson(@PathParam("emailAddress") String emailAddress) {
+    public Email isEmailValidJson(@PathParam("emailAddress") String emailAddress) {
         String ePattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
         java.util.regex.Matcher m = null;
+        Email email = new Email();
         try {
 
+            email.setEmailAdress(emailAddress);
+
+
             java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
-            m = p.matcher(emailAddress);
-            return "[isValid] : " + m.matches();
+            m = p.matcher(email.getEmailAdress());
+
+            email.setIsValid(m.matches());
+
+            return email;
 
         } catch (Exception e) {
-            return "[isValid] : false";
+            email.setIsValid(false);
+            return email;
         }
     }
 
     // The Java method will process HTTP GET requests
     @GET
     // The Java method will produce content identified by the MIME Media type "text/plain"
-    @Produces("text/html")
-    @Path("/html/{emailAddress}")
-    public String isEmailValidHtml(@PathParam("emailAddress") String emailAddress) {
+    @Produces("text/xml")
+    @Path("/xml/{emailAddress}")
+    public Email isEmailValidHtml(@PathParam("emailAddress") String emailAddress) {
         String ePattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
         java.util.regex.Matcher m = null;
+        Email email = new Email();
         try {
 
+            email.setEmailAdress(emailAddress);
+
+
             java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
-            m = p.matcher(emailAddress);
-            return "[isValid] : " + m.matches();
+            m = p.matcher(email.getEmailAdress());
+
+            email.setIsValid(m.matches());
+
+            return email;
 
         } catch (Exception e) {
-            return "[isValid] : false";
+            email.setIsValid(false);
+            return email;
         }
     }
     public static void main(String[] args) throws IOException {
