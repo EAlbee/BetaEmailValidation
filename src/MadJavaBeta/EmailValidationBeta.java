@@ -10,6 +10,7 @@ import javax.ws.rs.Path;
 
 /**
  * Created by EAlbee, DSullivan, MGundrum on 11/25/2015.
+ * @Author MadJavaBeta
  */
 // The Java class will be hosted at the URI path "/helloworld"
 @Path("/EmailValidation")
@@ -68,6 +69,8 @@ public class EmailValidationBeta {
             return email;
         }
     }
+
+
     public static void main(String[] args) throws IOException {
         HttpServer server = HttpServerFactory.create("http://localhost:9012/");
         server.start();
