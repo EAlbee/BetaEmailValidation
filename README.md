@@ -1,14 +1,16 @@
 # BetaEmailValidation
 
 Using BetaEmailValidation
+
 SETUP
 
 clone project from https://github.com/MadJavaTeamBeta/BetaEmailValidation
 run the EmailValidationBeta. This will host the web service on a Jersey server at  http://localhost:9012/EmailValidation
 
-CONSUMPTION {emailtest} will be replaced with the String value of the request ie. beta@gmail.com
+CONSUMPTION {emailtest} will be replaced with the String value of the request i.e. "dbsullivan@madisoncollege.edu"
 
 for JSON    @Path("/json/{emailAddress}")
+
 for XML     @Path("/xml/{emailAddress}")
 
 An Example JSON result:
@@ -17,8 +19,9 @@ An Example JSON result:
 ```
 
 An Example call using 
-1. Jackson (for the JSON object mapping to the Email object)   
-2. Jersey (for the Restful client)
+
+ 1. Jackson (for the JSON object mapping to the Email object)   
+ 2. Jersey (for the Restful client)
 
 ```
 package com.TennisApp.java.utilities;
