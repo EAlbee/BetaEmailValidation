@@ -13,8 +13,9 @@ for JSON    @Path("/json/{emailAddress}")
 
 for XML     @Path("/xml/{emailAddress}")
 
-An Example JSON result:
+An Example JSON call and JSON result:
 ```
+ Can call from the browser like this example: http://localhost:9012/EmailValidation/json/dbsullivan@madisoncollege.edu
  {"emailAdress":"dbsullivan@madisoncollege.edu","isValid":true}
 ```
 
