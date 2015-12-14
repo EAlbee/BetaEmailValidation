@@ -24,8 +24,8 @@ public class EmailValidationBetaTest {
         EmailValidationBeta validate = new EmailValidationBeta();
         Email email = new Email();
 
-        email.setEmailAdress("EAlbee@madisoncollege.edu");
-        email.setIsValid(validate.parseRegex(email.getEmailAdress()));
+        email.setEmailAddress("EAlbee@madisoncollege.edu");
+        email.setIsValid(validate.parseRegex(email.getEmailAddress()));
 
         assertEquals(email.getIsValid(), true);
     }
@@ -35,8 +35,8 @@ public class EmailValidationBetaTest {
         EmailValidationBeta validate = new EmailValidationBeta();
         Email email = new Email();
 
-        email.setEmailAdress("EAlbee@madisoncollege");
-        email.setIsValid(validate.parseRegex(email.getEmailAdress()));
+        email.setEmailAddress("EAlbee@madisoncollege");
+        email.setIsValid(validate.parseRegex(email.getEmailAddress()));
 
         assertEquals(email.getIsValid(), false);
     }

@@ -29,11 +29,11 @@ public class EmailValidationBeta {
         Email email = new Email();
         try {
 
-            email.setEmailAdress(emailAddress);
+            email.setEmailAddress(emailAddress);
 
 
             //java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
-            //m = p.matcher(email.getEmailAdress());
+            //m = p.matcher(email.getEmailAddress());
             //m = parseRegex(emailAddress);
 
             email.setIsValid(parseRegex(emailAddress));
@@ -58,7 +58,7 @@ public class EmailValidationBeta {
         Email email = new Email();
         try {
 
-            email.setEmailAdress(emailAddress);
+            email.setEmailAddress(emailAddress);
 
 
             //java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
