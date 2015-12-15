@@ -1,10 +1,14 @@
 package MadJavaBeta;
 
+/**
+ * Project: BetaEmailValidation
+ * Class: Email
+ * Created by EAlbee
+ * 11/25/2015
+ */
+
 import javax.xml.bind.annotation.XmlRootElement;
 
-/**
- * Created by EAlbee on 11/25/2015.
- */
 @XmlRootElement
 public class Email {
     private String emailAddress;
